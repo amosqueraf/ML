@@ -1,0 +1,54 @@
+Métodos de agregación (Ensemble)
+Actualmente las organizaciones utilizan técnicas de aprendizaje supervisado, para tomar mejores decisiones y obtener más ganancias. Sin embargo, estos pueden sufrir de sesgos y variaciones. 
+En este sentido se recomienda utilizar métodos de ensemble (agrupación) que combinan varios modelos básicos para producir un modelo predictivo óptimo.  El principio fundamental detrás del modelo de ensemble es que un grupo de aprendizajes débiles se unen para formar un aprendizaje fuerte.
+Existen diferentes métodos de ensemble para mejor el aprendizaje. Los métodos no generativos que se dividen en métodos de fusión de conjuntos y selección de conjuntos. Y los conjuntos generativos que se subdividen en remuestreo, selección y extracción de características, mezcla de expertos, codificación de salida y los métodos de conjuntos aleatorios. Para cada una de estas divisiones existes métodos y algoritmos según su naturaleza y caso de aplicación:
+Métodos no generativos
+?	Fusión de conjuntos:
+o	Majority voting
+o	Naive Bayes rule
+o	Behavior-Knowledge-Space
+o	Algebraic operators fusion
+o	Fuzzy fusion
+o	Decision Template
+o	Meta Learning
+o	Multi-label hierarchicalmethods
+?	Selección de conjuntos
+o	Test and select
+o	Cascading classi?ers
+o	Dynamic classi?er selection 
+o	Clustering based selection
+o	Pruning by statistical tests
+o	Pruning by semidef. Programming
+o	Forward/Backward selection
+Conjuntos generativos
+?	Remuestreo
+o	Bagging
+o	Boosting
+o	 Arcing
+o	Cross validated committees
+?	Selección de características
+o	Random Subspace
+o	Similarity based selection
+o	Input decimation
+o	Feature subset search
+o	Rotation forests
+?	Mexcla de expertos
+o	Gating network selection
+o	Hierarchical mixtureof experts
+o	Hybrid experts
+?	Codificación de salida
+o	One Per Class
+o	Pairwise and Correcting Classi?ers
+o	ECOC (Error-Correcting Output Coding)
+o	Data driven ECOC
+?	Conjuntos aleatorios
+o	Randomized decision trees
+o	Random forests
+o	Pasting small vote
+Los métodos de ensemble son utilizados típicamente en los arboles de decisión, dentro de los cuales se pueden destacar los siguientes:
+Bagging (Bootstrap Aggregation): Este método se utiliza cuando el objetivo es reducir la varianza de un árbol de decisión. El objetivo es crear varios subconjuntos de datos de la muestra de entrenamiento elegidos al azar con reemplazo (bootstraped). Cada recopilación de datos de subconjuntos se utiliza para entrenar los árboles de decisión. Como resultado, se obtiene un conjunto de diferentes modelos para formar el predictor más eficiente. Y finalmente se utiliza el promedio de todas las predicciones de diferentes árboles, que es más sólido que un solo árbol de decisión.
+Random Forest: es una extensión del Bagging, sin embargo, realiza un paso adicional, donde además de tomar el subconjunto aleatorio de datos, también toma la selección aleatoria de características en lugar de usar todas las características para hacer crecer árboles, es decir que en comparación con el bagging tiene un ligero ajuste Al decidir dónde dividirse y cómo tomar decisiones. Los modelos de Random Forest deciden dónde dividirse en función de una selección aleatoria de características, en lugar de dividir en características similares en cada nodo, los modelos de Random Forest implementan un nivel de diferenciación porque cada árbol se dividirá en función de diferentes características. Este nivel de diferenciación proporciona un conjunto mayor para agregarse, lo que produce un predictor más preciso. Como parte de las ventajas de utilizar esta técnica se encuentra la posibilidad de manejar datos de alta dimensionalidad y los valores perdidos manteniendo la precisión de los datos faltantes.
+Boosting: es otra técnica de conjunto para crear una colección de predictores. En esta técnica, se ajustan árboles consecutivos (muestra aleatoria) y en cada paso, el objetivo es resolver el error neto del árbol anterior. Cuando una entrada se clasifica erróneamente por una hipótesis, su peso aumenta de modo que es más probable que la siguiente hipótesis la clasifique correctamente. Al combinar todo el conjunto al final, los “aprendices” débiles se convierten en un modelo con mejor rendimiento.
+Gradient Boosting: es una extensión sobre el método de Boosting (Gradient Boosting = Gradient Descent + Boosting), que utiliza un algoritmo de gradiente descendiente que puede optimizar cualquier función de pérdida diferenciable. Un conjunto de árboles se construye uno por uno y los árboles individuales se suman secuencialmente. El siguiente árbol intenta recuperar la pérdida (diferencia entre los valores reales y predichos). Este método soporta diferentes funciones de pérdida y funciona bien con las interacciones.
+El objetivo de cualquier problema de machine learning es encontrar un modelo único que pueda predecir de mejor forma el resultado deseado. En lugar de hacer un modelo y esperar que este sea el mejor predictor se pueda obtener, los métodos de ensemble tienen en cuenta una gran cantidad de modelos y promedian esos modelos para producir un modelo final. Es importante tener en cuenta que los árboles de decisión no son la única forma de métodos conjuntos.
+
