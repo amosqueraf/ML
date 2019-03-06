@@ -449,4 +449,5 @@ def update_text(n_clicks, Edad,Genero,Estrato,transporte,dia,hora,etapas,minutos
    # return str(round(probab,3))+" %"
       
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run(debug=True, use_reloader=False, host='0.0.0.0', port=8888)
+    
